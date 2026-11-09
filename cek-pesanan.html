@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cek Pesanan — KIRADIE STORE</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <img class="brand-logo" alt="KIRADIE STORE Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl5W69fXAZI7_1pG2wOyLbdK6DEOxOHkCqnT9IL5tMcDQr-i48S5Q0lSn_6WPQAVpTcfSlWvSXIc4vfd61Mfcf-HLZnjohRHFhAyu1F3sd33oJsZPeJ_kXLA_k9uVRMGh_-VyxOUO-SZ-mok2eO7fTh8VyN7TJWRZHEuRFIeJrfpo4_5Gq_mN9V8n0CVcLcGyaHC2xkuxjzE_B6ZiSlptVumxkiHXrJtviD5KcTMk">
+        <div class="brand-text">
+          <div class="brand-name"><span>KIRADIE</span><span class="accent">STORE</span></div>
+          <span class="brand-tagline">Top Up Cepat, Aman, Harga Bersahabat</span>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="pilih-game.html" class="nav-link">Pilih Game</a>
+        <a href="top-up-game.html" class="nav-link">Top Up Game</a>
+        <a href="tentang-kami.html" class="nav-link">Tentang Kami</a>
+        <a href="cek-pesanan.html" class="nav-link active">Cek Pesanan</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cek-pesanan.html" class="btn-check-order"><span class="material-symbols-outlined">search_check</span><span>Cek Pesanan</span></a>
+        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="btn-cs"><span class="material-symbols-outlined">support_agent</span><span>CS WhatsApp</span></a>
+        <img class="avatar" alt="Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG6LLOHK6XU4EYBwC_sXK3KA9ZUY3IMjCyE-3h_SX7c05dXXwNR6kCQJB3SOdFbl0u5I8n5CfcwtnWpdIwwmQMEiinZR_07o--VkCzoL969w9VRclZSo9WHvWEVY2moaTj5sMmteyrsqKVRiwohU6LK8JEG_bg1uxxpO4Ku2jbp-URUc0DLkw5WUXa4BCDed9JtM4MEsu5RUzBUskOEpnVGjHgK-icQnaXAI0t2Fk">
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="tracking-section">
+      <div class="tracking-glow-1"></div>
+      <div class="tracking-glow-2"></div>
+      <div class="container">
+        <div class="tracking-inner">
+          <div class="tracking-badges">
+            <div class="left">
+              <span class="tracking-badge"><span class="dot"></span>SLIDE 05 // LACAK TRANSAKSI</span>
+              <span class="tracking-badge plain"><span class="material-symbols-outlined">bolt</span>REAL-TIME TRACKING API</span>
+            </div>
+            <div class="sync">
+              <span class="material-symbols-outlined">sync</span>SYNC: LIVE INSTANT DISPATCH
+            </div>
+          </div>
+          <div class="tracking-title">
+            <h1>Cek Status Pesanan & Invoice</h1>
+            <p>Pantau progres top up diamond/token akun game kamu secara otomatis dalam hitungan detik. Cukup masukkan Nomor Invoice atau Nomor WhatsApp saat pembelian.</p>
+          </div>
+
+          <div class="search-card">
+            <form class="search-form" id="trackingForm">
+              <div class="search-input-wrap">
+                <span class="icon material-symbols-outlined">search</span>
+                <input id="invoiceInput" type="text" value="KRS-849204-MLBB" placeholder="Contoh: KRS-20241029-8821 atau 081234567890">
+                <button class="btn-clear" type="button" onclick="document.getElementById('invoiceInput').value=''"><span class="material-symbols-outlined">cancel</span></button>
+              </div>
+              <button class="search-submit" type="submit"><span class="material-symbols-outlined">manage_search</span>Lacak Pesanan Sekarang</button>
+            </form>
+            <div class="search-footer">
+              <div class="left">
+                <span class="label">Filter Status Demo:</span>
+                <button class="status-chip active" data-filter="all" type="button">Semua</button>
+                <button class="status-chip" data-filter="pending" type="button">Menunggu Pembayaran</button>
+                <button class="status-chip" data-filter="process" type="button">Sedang Diproses</button>
+                <button class="status-chip" data-filter="success" type="button">Berhasil (Selesai)</button>
+              </div>
+              <a class="help-link" href="https://wa.me/" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">help_center</span>Butuh Bantuan Pesanan?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Invoice Detail -->
+    <section class="container">
+      <div class="invoice-container" id="invoiceContainer">
+        <div class="invoice-card">
+          <div class="invoice-header">
+            <div class="left">
+              <div class="invoice-id-row">
+                <span class="invoice-id">#KRS-849204-MLBB</span>
+                <button class="btn-copy" onclick="navigator.clipboard.writeText('KRS-849204-MLBB')"><span class="material-symbols-outlined">content_copy</span></button>
+              </div>
+              <div class="invoice-meta">
+                <span class="item"><span class="material-symbols-outlined">calendar_today</span>24 Oktober 2024 — 14:32 WIB</span>
+                <span>•</span>
+                <span class="item accent"><span class="material-symbols-outlined">terminal</span>Ref: MOON-ID-99214981</span>
+              </div>
+            </div>
+            <div class="status-pill">
+              <div class="icon-box"><span class="material-symbols-outlined">verified</span></div>
+              <div class="text">
+                <span>Status Transaksi</span>
+                <span>BERHASIL / SUKSES</span>
+              </div>
+              <span class="badge badge-secondary">100% TERKIRIM</span>
+            </div>
+          </div>
+
+          <!-- Stepper -->
+          <div class="stepper-card">
+            <div class="stepper-card-header">
+              <span class="label"><span class="material-symbols-outlined">route</span>Alur Eksekusi Transaksi Instan (0-3 Detik)</span>
+              <span class="latency">Latency: 1.4s (Total Processing)</span>
+            </div>
+            <div class="stepper-grid">
+              <div class="step-node"><div class="num"><span class="material-symbols-outlined">check</span></div><div class="text"><span class="title">1. Pesanan Dibuat</span><span class="time">Pukul 14:32:01 WIB</span><span class="detail">Payload tervalidasi</span></div></div>
+              <div class="step-node"><div class="num"><span class="material-symbols-outlined">check</span></div><div class="text"><span class="title">2. Terverifikasi</span><span class="time">QRIS Instan Gateway</span><span class="detail">Lunas otomatis (0.4s)</span></div></div>
+              <div class="step-node"><div class="num"><span class="material-symbols-outlined">check</span></div><div class="text"><span class="title">3. Kirim Diamond API</span><span class="time">Moonton Direct Core</span><span class="detail">Selesai dalam 1.4 detik</span></div></div>
+              <div class="step-node"><div class="num"><span class="material-symbols-outlined">check</span></div><div class="text"><span class="title">4. Sukses & Notif</span><span class="time">WA & Web Push</span><span class="detail">Diamond aktif di akun</span></div></div>
+            </div>
+          </div>
+
+          <div class="invoice-split">
+            <div class="invoice-info-card">
+              <div class="invoice-card-header">
+                <div class="title info-icon"><span class="material-symbols-outlined">sports_esports</span>Informasi Akun & Produk</div>
+                <span class="badge badge-soft">Direct Sync ID</span>
+              </div>
+              <div class="invoice-game-overview">
+                <div class="icon"><img alt="MLBB" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbOoWDLpdkYf1lBEx5V79lsIaCIPB1XibQTxSVjdK40krz1BLAKdNSYCcReVkpT2wmRL6nrgw0pYET6ZojWC554Fvmgux-rJtgTUPehv-iBKmg3I8eug_qiPMtcdARsDPlm1jiI4z1rm6xPzuD4eCYa6WUe-WpLwjb6UBeiXrImAUP61seOaqgLVpG3DRSmT1jsh0jLAgrdFSrHtvkYlMwKZw1N8wen9Rk0YRuTMo"></div>
+                <div class="text">
+                  <span class="l1">Judul Game</span>
+                  <span class="l2">Mobile Legends: Bang Bang</span>
+                  <span class="l3"><span class="dot"></span>Server Gateway: Latensi 14ms (Direct Moonton Engine)</span>
+                </div>
+              </div>
+              <div class="invoice-specs">
+                <div class="row"><span class="label">Paket / Denominasi</span><span class="value accent"><span class="material-symbols-outlined">diamond</span>706 Diamonds (+Bonus Starlight)</span></div>
+                <div class="row"><span class="label">User ID & Zone ID</span><span class="value">123456789 <span class="badge-muted">(Zone 2124)</span></span></div>
+                <div class="row"><span class="label">Nickname Terverifikasi</span><span class="value accent-primary"><span class="material-symbols-outlined">verified_user</span>KiraValkyrie99</span></div>
+                <div class="row"><span class="label">Serial Number (SN Provider)</span><span class="value"><span class="serial">FLAZZ-ML-706-99281048102</span><button class="btn-copy-mini" onclick="navigator.clipboard.writeText('FLAZZ-ML-706-99281048102')"><span class="material-symbols-outlined">content_copy</span></button></span></div>
+              </div>
+              <div class="invoice-note"><span class="material-symbols-outlined">lock</span>Transaksi dilindungi enkripsi AES-256 dan garansi anti-minus akun Moonton resmi seumur hidup.</div>
+            </div>
+
+            <div class="invoice-payment-card">
+              <div class="invoice-card-header">
+                <div class="title pay-icon"><span class="material-symbols-outlined">receipt_long</span>Rincian Pembayaran</div>
+                <span class="badge badge-soft">LUNAS</span>
+              </div>
+              <div class="payment-method-box">
+                <div class="left">
+                  <div class="logo-box">Q</div>
+                  <div class="text"><span class="l1">QRIS All Payment</span><span class="l2">GoPay, DANA, OVO, ShopeePay, BCA</span></div>
+                </div>
+                <span class="check material-symbols-outlined">check_circle</span>
+              </div>
+              <div class="payment-fees">
+                <div class="row"><span>Harga Denominasi (706 D)</span><span class="value">Rp 180.000</span></div>
+                <div class="row"><span>Biaya Layanan Admin</span><span class="value free">Rp 0 (FREE PROMO)</span></div>
+                <div class="row"><span>Kode Verifikasi Transaksi</span><span class="value">Rp 0</span></div>
+                <div class="total"><span class="label">Total Pembayaran</span><span class="value">Rp 180.000</span></div>
+              </div>
+              <div class="wa-target">
+                <div class="left"><span class="material-symbols-outlined">chat</span><span>No. WhatsApp:</span></div>
+                <span class="value">+62 812-3456-7890</span>
+              </div>
+              <div class="invoice-actions">
+                <button class="btn btn-secondary" onclick="showToast('Mengunduh Invoice PDF resmi...')"><span class="material-symbols-outlined">download</span>Unduh PDF Invoice</button>
+                <button class="btn btn-secondary" onclick="showToast('Bukti invoice telah dikirim ulang ke nomor WhatsApp Anda.')"><span class="material-symbols-outlined">send_to_mobile</span>Kirim Ulang Bukti ke WA</button>
+                <a href="top-up-game.html" class="btn btn-buy"><span class="material-symbols-outlined">shopping_cart_checkout</span>Pesan Lagi Game Ini</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Help -->
+    <section class="container section-lg">
+      <div class="help-header">
+        <div class="text">
+          <span class="overline">PUSAT BANTUAN TRANSAKSI</span>
+          <h2>Pesanan Belum Masuk Lebih dari 5 Menit?</h2>
+        </div>
+        <p>Sistem kami otomatis memvalidasi setiap detik. Ikuti 3 protokol resolusi cepat di bawah untuk bantuan seketika.</p>
+      </div>
+      <div class="help-cards">
+        <div class="help-card">
+          <div class="top">
+            <div class="icon-box"><span class="material-symbols-outlined">restart_alt</span></div>
+            <h3>1. Cek & Relogin Game</h3>
+            <p>Tutup aplikasi Mobile Legends Anda secara penuh (Force Close), lalu buka kembali. Diamond langsung masuk ke saldo utama profil tanpa perlu klaim inbox.</p>
+          </div>
+          <div class="footer"><span class="material-symbols-outlined">info</span>Tersinkronisasi otomatis via server</div>
+        </div>
+        <div class="help-card">
+          <div class="top">
+            <div class="icon-box"><span class="material-symbols-outlined">support_agent</span></div>
+            <h3>2. CS WhatsApp 24 Jam</h3>
+            <p>Kirimkan screenshot invoice <strong>#KRS-849204-MLBB</strong> ke Admin Customer Service kami. Rata-rata respon penanganan di bawah 2 menit.</p>
+          </div>
+          <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="footer">Chat WhatsApp CS Sekarang <span class="material-symbols-outlined">arrow_forward</span></a>
+        </div>
+        <div class="help-card">
+          <div class="top">
+            <div class="icon-box"><span class="material-symbols-outlined">format_image_left</span></div>
+            <h3>3. Garansi 100% Anti-Minus</h3>
+            <p>Semua item legal dari distributor resmi partner Moonton. Kami menjamin 100% uang kembali penuh jika terjadi kegagalan injeksi sistem.</p>
+          </div>
+          <div class="footer"><span class="material-symbols-outlined">verified</span>Garansi Uang Kembali Penuh</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide Navigation -->
+    <section class="slide-nav">
+      <div class="slide-nav-inner">
+        <a href="tentang-kami.html" class="slide-link">
+          <span class="material-symbols-outlined">arrow_back</span>
+          <div class="text">
+            <span>Slide Sebelumnya</span>
+            <span>Slide 4: Tentang Kami</span>
+          </div>
+        </a>
+        <div class="slide-dots">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot active"></span>
+        </div>
+        <a href="index.html" class="slide-link next">
+          <div class="text">
+            <span>Kembali Ke Awal</span>
+            <span>Slide 1: Beranda / Katalog</span>
+          </div>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="toast" id="toastNotification">
+      <span class="material-symbols-outlined">notifications_active</span>
+      <span id="toastMessage">Aksi berhasil dilakukan</span>
+    </div>
+  </main>
+
+  <div class="bottom-bar">
+    <div class="bottom-bar-inner">
+      <div class="payment-methods">
+        <span class="pm-label"><span class="material-symbols-outlined">verified_user</span>Metode Resmi:</span>
+        <span class="pm-badge">QRIS</span><span class="pm-badge">GOPAY</span><span class="pm-badge">OVO</span><span class="pm-badge">DANA</span><span class="pm-badge">BCA</span><span class="pm-badge">MANDIRI</span><span class="pm-badge">INDOMARET</span>
+      </div>
+      <div class="bottom-nav">
+        <button class="nav-arrow"><span class="material-symbols-outlined">chevron_left</span></button>
+        <span class="nav-label">NAVIGASI</span>
+        <button class="nav-arrow"><span class="material-symbols-outlined">chevron_right</span></button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-title">KIRADIE STORE</span>
+        <p>Pusat transaksi voucher & top-up diamonds, credits, and tokens paling terpercaya se-Indonesia.</p>
+      </div>
+      <div class="footer-features">
+        <span>Layanan Otomatis 24/7</span><span>•</span>
+        <span>Garansi 100% Aman</span><span>•</span>
+        <span>Instant Delivery</span>
+      </div>
+      <div class="footer-copy">© 2024 KIRADIE STORE. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('trackingForm');
+      const invoiceInput = document.getElementById('invoiceInput');
+      const container = document.getElementById('invoiceContainer');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        container.classList.add('loading');
+        setTimeout(() => {
+          container.classList.remove('loading');
+          showToast('Menampilkan hasil transaksi untuk: ' + (invoiceInput.value || 'KRS-849204-MLBB'));
+        }, 350);
+      });
+
+      document.querySelectorAll('.status-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('.status-chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          showToast('Filter status diterapkan: ' + chip.innerText);
+        });
+      });
+    })();
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastMessage').innerText = msg;
+      toast.classList.add('visible');
+      setTimeout(() => toast.classList.remove('visible'), 3200);
+    }
+  </script>
+</body>
+</html>
